@@ -5,7 +5,94 @@
 <link rel="icon" type="image/png" href="assets/logo.png">
 <link rel="apple-touch-icon" href="assets/logo.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>مكتبة د. عبدالولي الشميري</title>
+<script type="application/json" id="site-meta">
+{
+  "publicBase": "https://eternago.com/library/",
+  "title": "مكتبة د. عبد الولي الشميري",
+  "description": "منصة إدارة مكتبة د. عبد الولي الشميري — لتسجيل الكتب والمؤلفين والناشرين والطبعات ونسخ المكتبة، مع إمكانية البحث والتعديل والحفظ. تصميم وتطوير Eterna Go.",
+  "imagePath": "assets/logo.png",
+  "imageAlt": "شعار مكتبة د. عبد الولي الشميري — Eterna Go",
+  "company": "Eterna Go",
+  "themeColor": "#1a5fb4",
+  "locale": "ar_AR"
+}
+</script>
+<!-- معاينة المشاركة (واتساب / فيسبوك) — حدّث القيم هنا عند تغيير site-meta -->
+<title>مكتبة د. عبد الولي الشميري</title>
+<meta name="description" content="منصة إدارة مكتبة د. عبد الولي الشميري — لتسجيل الكتب والمؤلفين والناشرين والطبعات ونسخ المكتبة، مع إمكانية البحث والتعديل والحفظ. تصميم وتطوير Eterna Go.">
+<meta name="theme-color" content="#1a5fb4">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:site_name" content="مكتبة د. عبد الولي الشميري">
+<meta property="og:title" content="مكتبة د. عبد الولي الشميري">
+<meta property="og:description" content="منصة إدارة مكتبة د. عبد الولي الشميري — لتسجيل الكتب والمؤلفين والناشرين والطبعات ونسخ المكتبة، مع إمكانية البحث والتعديل والحفظ. تصميم وتطوير Eterna Go.">
+<meta property="og:url" content="https://eternago.com/library/">
+<meta property="og:image" content="https://eternago.com/library/assets/logo.png">
+<meta property="og:image:secure_url" content="https://eternago.com/library/assets/logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="شعار مكتبة د. عبد الولي الشميري — Eterna Go">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="مكتبة د. عبد الولي الشميري">
+<meta name="twitter:description" content="منصة إدارة مكتبة د. عبد الولي الشميري — لتسجيل الكتب والمؤلفين والناشرين والطبعات ونسخ المكتبة، مع إمكانية البحث والتعديل والحفظ. تصميم وتطوير Eterna Go.">
+<meta name="twitter:image" content="https://eternago.com/library/assets/logo.png">
+<meta name="twitter:image:alt" content="شعار مكتبة د. عبد الولي الشميري — Eterna Go">
+<link rel="canonical" href="https://eternago.com/library/">
+<script>
+(function () {
+  var SITE = JSON.parse(document.getElementById('site-meta').textContent);
+  window.SITE = SITE;
+
+  function resolveBase() {
+    if (SITE.publicBase) {
+      return String(SITE.publicBase).replace(/\/?$/, '/');
+    }
+    if (location.protocol === 'http:' || location.protocol === 'https:') {
+      return location.origin + location.pathname.replace(/[^/]+$/, '');
+    }
+    return '';
+  }
+
+  function absUrl(path) {
+    var base = resolveBase();
+    if (!base) return path;
+    return base + String(path).replace(/^\//, '');
+  }
+
+  function pageUrl() {
+    if (location.protocol === 'http:' || location.protocol === 'https:') {
+      return location.href.split('#')[0].split('?')[0];
+    }
+    return absUrl('index.html');
+  }
+
+  function setMeta(attr, key, value) {
+    var el = document.querySelector('meta[' + attr + '="' + key + '"]');
+    if (el) el.setAttribute('content', value);
+  }
+
+  var imageUrl = absUrl(SITE.imagePath);
+  var canonical = pageUrl();
+
+  document.title = SITE.title;
+  setMeta('name', 'description', SITE.description);
+  setMeta('name', 'theme-color', SITE.themeColor);
+  setMeta('property', 'og:locale', SITE.locale);
+  setMeta('property', 'og:site_name', SITE.title);
+  setMeta('property', 'og:title', SITE.title);
+  setMeta('property', 'og:description', SITE.description);
+  setMeta('property', 'og:url', canonical);
+  setMeta('property', 'og:image', imageUrl);
+  setMeta('property', 'og:image:secure_url', imageUrl);
+  setMeta('property', 'og:image:alt', SITE.imageAlt);
+  setMeta('name', 'twitter:title', SITE.title);
+  setMeta('name', 'twitter:description', SITE.description);
+  setMeta('name', 'twitter:image', imageUrl);
+  setMeta('name', 'twitter:image:alt', SITE.imageAlt);
+
+  var canonicalEl = document.querySelector('link[rel="canonical"]');
+  if (canonicalEl) canonicalEl.setAttribute('href', canonical);
+})();
+</script>
 <style>
   @font-face {
     font-family: 'Traditional Arabic';

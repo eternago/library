@@ -4,8 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>مكتبة د. عبدالولي الشميري</title>
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Lateef:wght@400;600&display=swap" rel="stylesheet">
 <style>
+  @font-face {
+    font-family: 'Traditional Arabic';
+    src: local('Traditional Arabic Bold'),
+         local('TraditionalArabic-Bold'),
+         local('Traditional Arabic');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root {
     --bg:           #f0f6fc;
     --surface:      #ffffff;
@@ -38,7 +47,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'Amiri', 'Lateef', serif;
+    font-family: 'Traditional Arabic', 'Arabic Typesetting', serif;
     font-size: var(--fs-base);
     font-weight: 700;
     background: linear-gradient(160deg, var(--bg) 0%, #e8f4fc 50%, #f8fbff 100%);
